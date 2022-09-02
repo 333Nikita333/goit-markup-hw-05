@@ -59,8 +59,8 @@
       <!--Шапка основного контенту-->
       <section class="main section">
         <div class="main container">
-          <h1 class="title">Ефективні рішення для вашого бізнесу</h1>
-          <button class="button" type="button">Замовити послугу</button>
+          <h1 class="title-hero">Ефективні рішення для вашого бізнесу</h1>
+          <button class="button" type="button" data-modal-open>Замовити послугу</button>
         </div>
       </section>
       <!--Особливості-->
@@ -118,16 +118,25 @@
       <!--Чим ми займаємося-->
       <section class="description section">
         <div class="description container">
-          <h2 class="title">Чим ми займаємося</h2>
+          <h2 class="title-section">Чим ми займаємося</h2>
           <ul class="description list">
             <li class="item">
-              <img src="./images/img-one.jpg" alt="photo-one" width="370" height="294" />
+              <img src="./images/label-one.jpg" alt="label-one" width="370" height="294" />
+              <div class="container-lebel">
+                <h3 class="label-title">Десктопні додатки</h3>
+              </div>
             </li>
             <li class="item">
-              <img src="./images/img-two.jpg" alt="photo-two" width="370" height="294" />
+              <img src="./images/label-two.jpg" alt="label-two" width="370" height="294" />
+              <div class="container-lebel">
+                <h3 class="label-title">Мобільні додатки</h3>
+              </div>
             </li>
             <li class="item">
-              <img src="./images/img-three.jpg" alt="photo-three" width="370" height="294" />
+              <img src="./images/label-three.jpg" alt="label-three" width="370" height="294" />
+              <div class="container-lebel">
+                <h3 class="label-title">Дизайнерські рішення</h3>
+              </div>
             </li>
           </ul>
         </div>
@@ -135,7 +144,7 @@
       <!--Наша команда-->
       <section class="team section">
         <div class="container">
-          <h2 class="title">Наша команда</h2>
+          <h2 class="title-section">Наша команда</h2>
           <ul class="list">
             <li class="person-list">
               <img src="./images/person-one.jpg" alt="Ihor-Demyanenko" width="270" height="260" />
@@ -246,7 +255,7 @@
                     </a>
                   </li>
                 </ul>
-              </div> 
+              </div>
             </li>
             <li class="person-list">
               <img
@@ -293,9 +302,10 @@
           </ul>
         </div>
       </section>
+      <!-- Постійні клієнти -->
       <section class="section clients">
         <div class="container">
-          <h2 class="title">Постійні клієнти</h2>
+          <h2 class="title-section">Постійні клієнти</h2>
           <ul class="container-clients">
             <li class="list">
               <a class="client-link" href="">
@@ -395,5 +405,18 @@
         </div>
       </div>
     </footer>
+
+    <!-- Модальне вікно -->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="button-icon-close" data-modal-close>
+          <svg width="18px" height="18px">
+            <use href="./images/icons.svg#icon-icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Скрипт для модального вікна -->
+    <script src="./js/modal.js"></script>
   </body>
 </html>

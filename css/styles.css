@@ -21,6 +21,7 @@
     --logo-text-color: #000000;
     --icons-other-color: #AFB1B8;
     --icons-background-color: rgba(255, 255, 255, 0.1);
+    --label-background-color: rgba(47, 48, 58, 0.8);
 }
 
 body {
@@ -34,7 +35,9 @@ body {
 header {
     border-bottom: 1px solid #ECECEC;
 }
-
+img {
+    display: block;
+}
 
 /* Стилі для index.html */
 /* Навігація */
@@ -110,6 +113,21 @@ header {
     list-style: none;
     color: var(--primary-text-color);
 }
+.site-nav.list .item{
+    position: relative;
+}
+.site-nav.list .current::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background-color: var(--accent-color);
+    border-radius: 4px;
+}
 .site-nav .link:hover, 
 .site-nav .link:focus,
 .site-adress .link:hover,
@@ -128,6 +146,8 @@ header {
 } 
 
 
+
+/* Секція Герой */
 .main.section {
     width: 1600px;
     margin-right: auto;
@@ -147,7 +167,7 @@ header {
 .main.container {
     text-align: center;
 }
-.main.section .title {
+.main.section .title-hero {
     margin-top: 0;
     margin-right: auto;
     margin-bottom: 30px;
@@ -199,10 +219,14 @@ header {
 .feature .item {
     width: calc((100% - 90px) / 4);
 }
-.feature.section .feature-title {
+.feature-title {
     margin-top: 0;
     margin-bottom: 10px;
-
+}
+.feature-title,
+/* ...для тексту етикеток у 
+секції Чим ми займаємось */
+.label-title {
     color: var(--secondary-text-color);
     font-weight: 700;
     line-height: 1.14;
@@ -232,9 +256,11 @@ header {
 
 
 /* Секція Чим ми займаємось */
-.description.section .title,
-/* ...наша команда */
-.team .title {
+.description.section .title-section,
+/* ...секція наша команда */
+.team .title-section,
+/* ...секція постійні клієнти */
+.clients .title-section {
     margin-top: 0;
     margin-bottom: 50px;
 
@@ -250,14 +276,31 @@ header {
 .description.list {
     display: flex;
     flex-wrap: wrap;
+    gap: 30px;
 }
 .description.list .item {
+    position: relative;
     width: calc((100% - 60px) / 3);
 }
-.description.list .item:not(:nth-child(3n)) {
-    margin-right: 30px;
-}
+.container-lebel {
+    position: absolute;
+    bottom: 0;
+    left: 0;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 370px;
+    min-height: 70px;
+    background-color: var(--label-background-color);
+}
+.container-lebel .label-title {
+    margin: 0;
+
+    color: var(--primary-background-color);
+
+}
 
 
 /* Секція Наша команда */
@@ -329,16 +372,6 @@ header {
 
 
 /* Секція Клієнти */
-.clients .title {
-    margin-top: 0;
-    margin-bottom: 50px;
-
-    color: var(--secondary-text-color);
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.16;
-    text-align: center;
-}
 .container-clients {
     display: flex;
     padding: 0;
@@ -427,6 +460,53 @@ header {
 .container-join .social-link:focus {
     background-color: var(--accent-color);
 }
+
+
+
+/* Модальне вікно */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.2);;
+}
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+
+    min-width: 521px;
+    min-height: 581px;
+    padding: 8px;
+    background-color: var(--primary-background-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 
+                0px 1px 1px rgba(0, 0, 0, 0.14), 
+                0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+.button-icon-close {
+    display: flex;
+    cursor: pointer;
+    margin-left: auto;
+    padding: 6px;
+    min-width: 30px;
+    min-height: 30px;
+    
+    background-color: var(--primary-background-color);
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 
 
 /* Стилі для portfolio.html */
