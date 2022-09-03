@@ -515,9 +515,10 @@ img {
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
-
-
-
+.button-icon-close:hover,
+.button-icon-close:focus {
+    border-color: var(--accent-color);
+}
 /* Стилі для portfolio.html */
 /* кнопки-фільтри */
 .filters .container {
