@@ -8,24 +8,29 @@
 /* Колір напису "Студіо" #000000*/
 /* Колір іконок #AFB1B8*/
 /* Колір задноього фону іконок rgba(255, 255, 255, 0.1)*/
+/* Колір заднього фону блоку тексту в Чим ми займаємосся rgba(47, 48, 58, 0.8)*/
 
 /* Основні змінні сайту */
 :root {
     --primary-text-color: #757575;
     --secondary-text-color: #212121;
     --accent-color: #2196F3;
-    --primary-background-color: #ffffff;
+    --primary-white-color: #ffffff;
     --secondary-background-color: #F5F4FA;
-    --other-background-color: #2F303A;
     --footer-adress-text-color: rgba(255, 255, 255, 0.6);
+    --footer-background-color: #2F303A;
     --logo-text-color: #000000;
     --icons-other-color: #AFB1B8;
     --icons-background-color: rgba(255, 255, 255, 0.1);
     --label-background-color: rgba(47, 48, 58, 0.8);
+
+
+    --time-animation: 250ms;
+    --time-distribution-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
-    background-color: var(--primary-background-color);
+    background-color: var(--primary-white-color);
     color: var(--primary-text-color);
     font-family: Roboto, sans-serif;
     font-weight: 400;
@@ -101,8 +106,8 @@ img {
 .site-nav .link,
 .site-adress .link{
     display: flex;
-    padding-top: 31px;
-    padding-bottom: 31px;
+    padding-top: 32px;
+    padding-bottom: 32px;
     align-items: center;
 }
 .site-nav.list,
@@ -113,7 +118,7 @@ img {
     list-style: none;
     color: var(--primary-text-color);
 }
-.site-nav.list .item{
+.site-nav.list .current{
     position: relative;
 }
 .site-nav.list .current::after {
@@ -174,26 +179,26 @@ img {
     margin-left: auto;
     width: 696px;
     
-    color: var(--primary-background-color);
+    color: var(--primary-white-color);
     font-weight: 900;
     font-size: 44px;
     line-height: 1.36;
     letter-spacing: 0.06em;
     text-transform: uppercase;
 }
-.button {
+.main.container .button {
     min-width: 216px;
     min-height: 50px;
 
     cursor: pointer;
     background-color: var(--accent-color);
-    color: var(--primary-background-color);
+    color: var(--primary-white-color);
     font-family: inherit;
     font-weight: 700;
     font-size: 16px;
     line-height: 1.88;
     letter-spacing: 0.06em;
-    border-radius: 4px ;
+    border-radius: 4px;
     border: transparent;
 }
 
@@ -298,7 +303,7 @@ img {
 .container-lebel .label-title {
     margin: 0;
 
-    color: var(--primary-background-color);
+    color: var(--primary-white-color);
 
 }
 
@@ -314,7 +319,7 @@ img {
 .person-list{
     width: calc((100% - 90px) / 4);
     
-    background-color: var(--primary-background-color);
+    background-color: var(--primary-white-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 
                 0px 1px 1px rgba(0, 0, 0, 0.14), 
                 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -349,23 +354,25 @@ img {
     display: flex;
     justify-content: center;
 }
-.social-link {
+.social-link{
     display: flex;
     width: 44px;
     height: 44px;
     align-items: center;
     justify-content: center;
 
-    color: var(--icons-other-color);
     fill: currentColor;
     border-radius: 50%;
 }
-.container-links .social-link:hover,
-.container-links .social-link:focus {
-    color: var(--primary-background-color);
+.container-person .social-link {
+    color: var(--icons-other-color);
+}
+.container-person .social-link:hover,
+.container-person .social-link:focus {
+    color: var(--primary-white-color);
     background-color: var(--accent-color);
 }
-.container-links .list:not(:last-child) {
+.container-person .list:not(:last-child) {
     margin-right: 10px;
 }
 
@@ -404,7 +411,7 @@ img {
     padding-top: 60px;
     padding-bottom: 60px;
 
-    background-color: var(--other-background-color);
+    background-color: var(--footer-background-color);
 }
 .container.footer {
     display: flex;
@@ -418,7 +425,7 @@ img {
 }
 .footer .logo-studio,
 .adress-text {
-    color: var(--primary-background-color);
+    color: var(--primary-white-color);
 }
 .adress-text {
     margin-top: 0;
@@ -444,7 +451,7 @@ img {
     font-weight: 700;
     line-height: 1.14;
     text-transform: uppercase;
-    color: var(--primary-background-color);
+    color: var(--primary-white-color);
 }
 .container-join .list.link {
     display: flex;
@@ -454,6 +461,7 @@ img {
     margin-right: 10px;
 }
 .container-join .social-link {
+    color: var(--primary-white-color);
     background-color: var(--icons-background-color);
 }
 .container-join .social-link:hover,
@@ -488,7 +496,7 @@ img {
     min-width: 521px;
     min-height: 581px;
     padding: 8px;
-    background-color: var(--primary-background-color);
+    background-color: var(--primary-white-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 
                 0px 1px 1px rgba(0, 0, 0, 0.14), 
                 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -502,7 +510,8 @@ img {
     min-width: 30px;
     min-height: 30px;
     
-    background-color: var(--primary-background-color);
+    font-family: inherit;
+    background-color: var(--primary-white-color);
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -529,19 +538,20 @@ img {
     min-width: 73px;
     min-height: 38px;
 
-    color: var(--secondary-text-color);
-    background-color: var(--secondary-background-color);
+    cursor: pointer;
     font-family: inherit;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.63;
-    letter-spacing: 0.03em;
-    cursor: pointer;
+    border-radius: 4px;
+    border: transparent;
+    color: var(--secondary-text-color);
+    background-color: var(--secondary-background-color);
 }
 .filters .button:hover,
 .filters .button:focus {
     background-color: var(--accent-color);
-    color: var(--primary-background-color);
+    color: var(--primary-white-color);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 
                 0px 1px 2px rgba(0, 0, 0, 0.08), 
                 0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -564,14 +574,15 @@ img {
 .portfolio.list .item:nth-last-child(-n+3) {
     margin-bottom: 0px;
 }
-.portfolio.list .item:hover,
-.portfolio.list .item:focus {
+.portfolio.list a {
+    display: inline-block;
+    text-decoration: none;
+}
+.portfolio.list a:hover,
+.portfolio.list a:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 
                 0px 4px 4px rgba(0, 0, 0, 0.06), 
                 1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-.portfolio.list a {
-    text-decoration: none;
 }
 .portfolio.list img {
     display: block;
