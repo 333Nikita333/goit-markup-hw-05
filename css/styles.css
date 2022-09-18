@@ -55,8 +55,11 @@ img {
     padding: 0 15px;
 }
 .section {
+    max-width: 1600px;
     padding-top: 94px;
     padding-bottom: 94px;
+    margin-right: auto;
+    margin-left: auto;
 }
 .logo {
     padding-top: 24px;
@@ -154,7 +157,7 @@ img {
 
 /* Секція Герой */
 .main.section {
-    width: 1600px;
+    max-width: 1600px;
     margin-right: auto;
     margin-left: auto;
     padding-top: 200px;
